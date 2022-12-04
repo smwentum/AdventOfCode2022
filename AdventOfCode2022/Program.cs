@@ -14,6 +14,7 @@ namespace AdventOfCode2022 // Note: actual namespace depends on the project name
                 Console.WriteLine($"Day 2 part 2: {Day2RockPaperScissors.part2GetFile(@"D:\Documents\random programming stuff\Advent of code\2022\AdventOfCode2022\AdventOfCode2022\Test files\Day2.txt")}");
                 Console.WriteLine($"Day 3 part 1: {Day3RucksackReorganization.GetPart1Answer()}");
                 Console.WriteLine($"Day 3 part 2: {Day3RucksackReorganization.GetPart2Answer()}");
+                Console.WriteLine($"Day 4 part 1: {Day4CampCleanup.GetPart1()}");
             }
             catch (Exception ex)
             {
