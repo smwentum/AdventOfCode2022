@@ -24,8 +24,7 @@ namespace AdventOfCode2022
 
         public static int GetPart2Answer()
         {
-            List<string> rucksacks = File.ReadAllLines(@"D:\Documents\random programming stuff\Advent of code\2022\AdventOfCode2022\AdventOfCode2022\Test files\Day3p1Test.txt").ToList();
-            //List<string> rucksacks = File.ReadAllLines(@"D:\Documents\random programming stuff\Advent of code\2022\AdventOfCode2022\AdventOfCode2022\Test files\Day3.txt").ToList();
+            List<string> rucksacks = File.ReadAllLines(@"D:\Documents\random programming stuff\Advent of code\2022\AdventOfCode2022\AdventOfCode2022\Test files\Day3.txt").ToList();
 
             int answer = 0;
             for (int i = 0; i < rucksacks.Count; i += 3)
