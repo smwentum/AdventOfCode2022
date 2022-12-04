@@ -2,13 +2,22 @@
 
 namespace AdventOfCode2022 // Note: actual namespace depends on the project name.
 {
-    internal class Program
+    internal static class Program
     {
         static void Main(string[] args)
         {
-            problem1part1();
-            problem1part2();
-            Console.WriteLine($"Day 2 part 1: {Day2RockPaperSizors.part1GetFile(@"D:\Documents\random programming stuff\Advent of code\2022\AdventOfCode2022\AdventOfCode2022\Test files\Day2.txt")}");
+            try
+            {
+                problem1part1();
+                problem1part2();
+                Console.WriteLine($"Day 2 part 1: {Day2RockPaperSizors.part1GetFile(@"D:\Documents\random programming stuff\Advent of code\2022\AdventOfCode2022\AdventOfCode2022\Test files\Day2.txt")}");
+                Console.WriteLine($"Day 2 part 2: {Day2RockPaperSizors.part2GetFile(@"D:\Documents\random programming stuff\Advent of code\2022\AdventOfCode2022\AdventOfCode2022\Test files\Day2.txt")}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+             
+            }
         }
 
         private static void problem1part1()
@@ -35,9 +44,10 @@ namespace AdventOfCode2022 // Note: actual namespace depends on the project name
                 }
                 max = Math.Max(max, sum);
             }
-            arr.Add(max);
-
-            Console.WriteLine($"Problem 1 answer 1: {arr.Max()}");
+           
+                Console.WriteLine($"Problem 1 answer 1: {arr.Max()}");
+            
+          
         }
 
         private static void problem1part2()
@@ -51,7 +61,7 @@ namespace AdventOfCode2022 // Note: actual namespace depends on the project name
             {
                 if (string.IsNullOrEmpty(line))
                 {
-                   // Console.WriteLine(max);
+                  
                     arr.Add(max);
                     sum = 0;
                     max = 0;
@@ -66,7 +76,7 @@ namespace AdventOfCode2022 // Note: actual namespace depends on the project name
             arr.Sort();
 
             int len = arr.Count - 1;
-            Console.WriteLine($"Problem 1 answer 2: {arr[len]+ arr[len - 1]+ arr[len - 2]}");
+          Console.WriteLine($"Problem 1 answer 2: {arr[len]+ arr[len - 1]+ arr[len - 2]}");
         }
     }
 }

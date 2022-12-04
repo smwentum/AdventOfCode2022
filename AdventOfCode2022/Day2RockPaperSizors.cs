@@ -9,7 +9,7 @@ namespace AdventOfCode2022
     internal class Day2RockPaperSizors
     {
 
-        #region part 1: 
+   
 
         public static string part1GetFile(string fileName)
         {
@@ -27,6 +27,24 @@ namespace AdventOfCode2022
 
             return answer.ToString();
         }
+
+        public static string part2GetFile(string fileName)
+        {
+            List<string> lines = File.ReadLines(fileName).ToList();
+            int answer = 0;
+
+            foreach (string line in lines)
+            {
+                string[] moves = line.Split(' ');
+                RockPaperScissors opponent = GetMoves(moves[0]);
+                RockPaperScissors player = GetCheaterMove(opponent, moves[1]);
+                answer += GetScore(opponent, player);
+
+            }
+
+            return answer.ToString();
+        }
+
 
         private static int GetScore(RockPaperScissors opponent, RockPaperScissors player)
         {
@@ -74,6 +92,8 @@ namespace AdventOfCode2022
             return answer;
         }
 
+
+
         private static RockPaperScissors GetMoves(string v)
         {
             if (v == "A" || v == "X")
@@ -88,7 +108,39 @@ namespace AdventOfCode2022
             return RockPaperScissors.Scissors;
         }
 
-        #endregion
+        private static RockPaperScissors GetCheaterMove(RockPaperScissors opponent, string player)
+        {
+            if (player == "Y")
+            {
+                return opponent;
+            }
+            else if (player == "X")
+            {
+                switch (opponent)
+                {
+                    case RockPaperScissors.Rock:
+                        return RockPaperScissors.Scissors;
+                    case RockPaperScissors.Paper:
+                        return RockPaperScissors.Rock;
+                    case RockPaperScissors.Scissors:
+                        return RockPaperScissors.Paper;
+                }
+            }
+            switch (opponent)
+            {
+                case RockPaperScissors.Rock:
+                    return RockPaperScissors.Paper;
+                case RockPaperScissors.Paper:
+                    return RockPaperScissors.Scissors;
+                case RockPaperScissors.Scissors:
+                    return RockPaperScissors.Rock;
+             }
+            return RockPaperScissors.Rock;
+
+        }
+
+
+
 
     }
 }
