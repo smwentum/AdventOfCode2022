@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode2022
 {
-    internal class Day2RockPaperSizors
+    internal class Day2RockPaperScissors
     {
 
    

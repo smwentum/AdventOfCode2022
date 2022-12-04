@@ -10,8 +10,10 @@ namespace AdventOfCode2022 // Note: actual namespace depends on the project name
             {
                 problem1part1();
                 problem1part2();
-                Console.WriteLine($"Day 2 part 1: {Day2RockPaperSizors.part1GetFile(@"D:\Documents\random programming stuff\Advent of code\2022\AdventOfCode2022\AdventOfCode2022\Test files\Day2.txt")}");
-                Console.WriteLine($"Day 2 part 2: {Day2RockPaperSizors.part2GetFile(@"D:\Documents\random programming stuff\Advent of code\2022\AdventOfCode2022\AdventOfCode2022\Test files\Day2.txt")}");
+                Console.WriteLine($"Day 2 part 1: {Day2RockPaperScissors.part1GetFile(@"D:\Documents\random programming stuff\Advent of code\2022\AdventOfCode2022\AdventOfCode2022\Test files\Day2.txt")}");
+                Console.WriteLine($"Day 2 part 2: {Day2RockPaperScissors.part2GetFile(@"D:\Documents\random programming stuff\Advent of code\2022\AdventOfCode2022\AdventOfCode2022\Test files\Day2.txt")}");
+                Console.WriteLine($"Day 3 part 1: {Day3RucksackReorganization.GetPart1Answer()}");
+                Console.WriteLine($"Day 3 part 2: {Day3RucksackReorganization.GetPart2Answer()}");
             }
             catch (Exception ex)
             {
