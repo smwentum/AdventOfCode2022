@@ -8,6 +8,7 @@ namespace AdventOfCode2022 // Note: actual namespace depends on the project name
         {
             problem1part1();
             problem1part2();
+            Console.WriteLine($"Day 2 part 1: {Day2RockPaperSizors.part1GetFile(@"D:\Documents\random programming stuff\Advent of code\2022\AdventOfCode2022\AdventOfCode2022\Test files\Day2.txt")}");
         }
 
         private static void problem1part1()
