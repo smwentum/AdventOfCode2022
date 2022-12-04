@@ -36,7 +36,7 @@ namespace AdventOfCode2022 // Note: actual namespace depends on the project name
             }
             arr.Add(max);
 
-            Console.WriteLine(arr.Max());
+            Console.WriteLine($"Problem 1 answer 1: {arr.Max()}");
         }
 
         private static void problem1part2()
@@ -65,7 +65,7 @@ namespace AdventOfCode2022 // Note: actual namespace depends on the project name
             arr.Sort();
 
             int len = arr.Count - 1;
-            Console.WriteLine(arr[len]+ arr[len - 1]+ arr[len - 2]);
+            Console.WriteLine($"Problem 1 answer 2: {arr[len]+ arr[len - 1]+ arr[len - 2]}");
         }
     }
 }
