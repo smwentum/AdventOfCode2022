@@ -10,6 +10,6 @@ namespace AdventOfCode2022
     {
         public int Beginning { get; set; }
 
-        public int Endding { get; set; }
+        public int Ending { get; set; }
     }
 }

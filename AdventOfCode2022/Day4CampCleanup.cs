@@ -28,7 +28,7 @@ namespace AdventOfCode2022
 
         public static int GetPart2()
         {
-            List<string> lines = File.ReadAllLines(@"D:\Documents\random programming stuff\Advent of code\2022\AdventOfCode2022\AdventOfCode2022\Test files\Day4Test.txt").ToList();
+            List<string> lines = File.ReadAllLines(@"D:\Documents\random programming stuff\Advent of code\2022\AdventOfCode2022\AdventOfCode2022\Test files\Day4.txt").ToList();
             int count = 0;
             foreach (string line in lines)
             {
@@ -52,8 +52,11 @@ namespace AdventOfCode2022
 
         private static bool Overlap(SectionInterval assigmentPair1, SectionInterval assigmentPair2)
         {
-            if(assigmentPair1.Beginning <= assigmentPair2.Beginning 
-                    && assigmentPair2.Beginning <= assigmentPair1.Endding)
+            return (assigmentPair1.Beginning <= assigmentPair2.Beginning
+                    && assigmentPair2.Beginning <= assigmentPair1.Ending)
+                    || (assigmentPair1.Beginning <= assigmentPair2.Ending
+                    && assigmentPair2.Ending <= assigmentPair1.Ending);
+
         }
 
         private static SectionInterval GetAssigment(string v)
@@ -61,7 +64,7 @@ namespace AdventOfCode2022
             string[] lines = v.Split( '-' );
             SectionInterval assigment = new SectionInterval();
             assigment.Beginning = int.Parse(lines[0]);
-            assigment.Endding = int.Parse(lines[1]);
+            assigment.Ending = int.Parse(lines[1]);
             return assigment;
         }
 
@@ -74,7 +77,7 @@ namespace AdventOfCode2022
         private static bool AssigmentContains(SectionInterval assigmentPair1, SectionInterval assigmentPair2)
         {
             return assigmentPair1.Beginning <= assigmentPair2.Beginning
-                && assigmentPair1.Endding >= assigmentPair2.Endding;           
+                && assigmentPair1.Ending >= assigmentPair2.Ending;           
         }
     }
 }
