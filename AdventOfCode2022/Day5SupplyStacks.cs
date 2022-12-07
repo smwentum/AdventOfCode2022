@@ -8,7 +8,7 @@ namespace AdventOfCode2022
 {
     internal class Day5SupplyStacks
     {
-        public static string GetTopOfEachStack()
+        public static string Day5Part1()
         {
             List<string> lines = File.ReadAllLines(@"D:\Documents\random programming stuff\Advent of code\2022\AdventOfCode2022\AdventOfCode2022\Test files\Day5.txt").ToList();
             List<Day5StackMoves> moves = new List<Day5StackMoves>();
@@ -33,6 +33,52 @@ namespace AdventOfCode2022
                     boxes[move.ToIndex].Push(boxes[move.FromIndex].Pop());
                  }
             }
+            for (int i = 0; i < boxes.Length; i++)
+            {
+                if (boxes[i].Count > 0)
+                {
+                    answer += boxes[i].Peek().ToString();
+                }
+                else
+                {
+                    answer += "";
+                }
+            }
+
+            return answer;
+        }
+
+        public static string Day5Part2()
+        {
+            List<string> lines = File.ReadAllLines(@"D:\Documents\random programming stuff\Advent of code\2022\AdventOfCode2022\AdventOfCode2022\Test files\Day5.txt").ToList();
+            List<Day5StackMoves> moves = new List<Day5StackMoves>();
+            Stack<char>[] boxes = new Stack<char>[0];
+            string answer = "";
+            //going to use a little hack the line i need is the blank one so 
+            for (int i = 0; i < lines.Count; i++)
+            {
+                if (string.IsNullOrWhiteSpace(lines[i]))
+                {
+                    moves = GetMoves(lines.GetRange(i + 1, lines.Count - 1 - i));
+                    boxes = GetStartingConfig(lines.GetRange(0, i));
+                    break;
+
+                }
+            }
+            Stack<char> holder = new Stack<char>();
+            foreach (Day5StackMoves move in moves)
+            {
+                holder = new Stack<char>(); 
+                for (int i = 0; i < move.NumberOfBoxesToMove; i++)
+                {
+                    holder.Push(boxes[move.FromIndex].Pop());
+                }
+                while (holder.Count > 0)
+                {
+                    boxes[move.ToIndex].Push(holder.Pop());
+                }
+            }
+           
             for (int i = 0; i < boxes.Length; i++)
             {
                 if (boxes[i].Count > 0)
