@@ -18,6 +18,7 @@ namespace AdventOfCode2022 // Note: actual namespace depends on the project name
                 Console.WriteLine($"Day 4 part 2: {Day4CampCleanup.GetPart2()}");
                 Console.WriteLine($"Day 5 part 1: {Day5SupplyStacks.Day5Part1()}");
                 Console.WriteLine($"Day 5 part 2: {Day5SupplyStacks.Day5Part2()}");
+                Console.WriteLine($"Day 6 part 1: {Day6TuningTrouble.Day6Part1()}");
             }
             catch (Exception ex)
             {
