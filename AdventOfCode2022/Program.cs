@@ -22,6 +22,8 @@ namespace AdventOfCode2022 // Note: actual namespace depends on the project name
                 Console.WriteLine($"Day 6 part 2: {Day6TuningTrouble.Day6Part2()}");
                 Console.WriteLine($"Day 7 part 1: {Day7NoSpaceLeftOnDevice.GetFolderSizeCount()}");
                 Console.WriteLine($"Day 7 part 2: {Day7NoSpaceLeftOnDevice.FindFileToDelete() }");
+                Console.WriteLine($"Day 8 part 1: {Day8TreetopTreeHouse.CountOfVisableTrees()}");
+                Console.WriteLine($"Day 8 part 2: {Day8TreetopTreeHouse.HeighestScenicScore()}");
             }
             catch (Exception ex)
             {
