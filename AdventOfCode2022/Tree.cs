@@ -50,5 +50,10 @@ namespace AdventOfCode2022
         {
           return LeftVisable || RightVisable || TopVisable || BottomVisable; 
         }
+
+        internal int GetSenic()
+        {
+            return LeftScenic * RightSenic * TopSenic * BottomSenic;
+        }
     }
 }
